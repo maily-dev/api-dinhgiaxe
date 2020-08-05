@@ -1,0 +1,110 @@
+{
+  "_from": "adonis-acl",
+  "_id": "adonis-acl@1.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-NHCx/CfnjXfA0NKP8l33mAz0WjWXqnZ+la2493kXVEt4GbqnBWdJkfjl0vAqCSeLRr+wDRT3JMIy0FdwodItuA==",
+  "_location": "/adonis-acl",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "adonis-acl",
+    "name": "adonis-acl",
+    "escapedName": "adonis-acl",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/adonis-acl/-/adonis-acl-1.1.1.tgz",
+  "_shasum": "34d9975e8ad43da5e2ff889a14d2aca069b8fe21",
+  "_spec": "adonis-acl",
+  "_where": "E:\\Project Phuc Quan\\dinhgiaxe\\server-side",
+  "author": {
+    "name": "Evgeny Razumov",
+    "url": "enniel"
+  },
+  "bugs": {
+    "url": "https://github.com/enniel/adonis-acl/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "acler": "^1.0.0",
+    "lodash": "^4.17.4",
+    "node-exceptions": "^2.0.2"
+  },
+  "deprecated": false,
+  "description": "Adonis ACL system",
+  "devDependencies": {
+    "@adonisjs/ace": "^4.0.7",
+    "@adonisjs/fold": "^4.0.5",
+    "@adonisjs/lucid": "^4.0.21",
+    "@adonisjs/sink": "^1.0.13",
+    "child_process": "^1.0.2",
+    "coveralls": "^3.0.0",
+    "dotenv": "^4.0.0",
+    "edge.js": "^1.1.3",
+    "husky": "^0.13.4",
+    "japa": "^1.0.5",
+    "japa-cli": "^1.0.1",
+    "lint-staged": "^4.0.0",
+    "mysql": "^2.13.0",
+    "nyc": "^11.3.0",
+    "pg": "^6.3.1",
+    "semver": "^5.3.0",
+    "sqlite3": "^4.0.2",
+    "standard": "^10.0.2",
+    "walk-sync": "^0.3.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "homepage": "https://github.com/enniel/adonis-acl#readme",
+  "keywords": [
+    "acl",
+    "adonis"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
+  "main": "src/Acl/index.js",
+  "name": "adonis-acl",
+  "nyc": {
+    "include": [
+      "src",
+      "providers",
+      "commands"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enniel/adonis-acl.git"
+  },
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "posttest": "npm run test:cleanup && npm run coverage",
+    "precommit": "npm run test && lint-staged",
+    "prepush": "npm run test && lint-staged",
+    "pretest": "npm run test:cleanup && npm run lint",
+    "test": "npm run test:local",
+    "test:cleanup": "rm -rf test/database && rm -rf test/tmp",
+    "test:local": "NO_ANSI=false FORCE_COLOR=true DB=sqlite3 nyc node ./bin/index.js --local",
+    "test:win": "set NO_ANSI=false && set FORCE_COLOR=true && set DB=sqlite3 && nyc node ./bin/index.js --win"
+  },
+  "standard": {
+    "globals": [
+      "use",
+      "make"
+    ]
+  },
+  "version": "1.1.1"
+}
